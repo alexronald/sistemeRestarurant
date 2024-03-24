@@ -29,7 +29,7 @@ if($loginNombre!="" && $loginPassword!=""){
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
-<form method="POST" action="Login.php">
+<form method="POST" action="index.php">
 <h1 align="center">SISTEME PARA RESTARUANT</h1>
 <div align="center">
 <table width="300" border="8">
