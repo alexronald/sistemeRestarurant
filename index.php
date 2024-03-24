@@ -12,12 +12,9 @@ $row=$resultado->fetch_assoc();
 	$passok=$row["password"];
 
 if($loginNombre!="" && $loginPassword!=""){
-	echo $userok;
 	if($loginNombre==$userok && $loginPassword==$passok){
-
 	$_SESSION["logueado"]=TRUE;
-
-	header("location: cliente.php");
+	header("location:cliente.php");
 	exit();
 	}
 }
