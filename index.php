@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("conexion.php");
 if(isset($_POST["login"])){
 $loginNombre=$_POST['usuario'];
@@ -14,7 +15,6 @@ if($loginNombre!="" && $loginPassword!=""){
 	echo $userok;
 	if($loginNombre==$userok && $loginPassword==$passok){
 
-	session_start();
 	$_SESSION["logueado"]=TRUE;
 
 	header("location: cliente.php");
