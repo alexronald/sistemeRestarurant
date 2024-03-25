@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("conexion.php");
 if(isset($_POST["login"])){
 $loginNombre=$_POST['usuario'];
@@ -11,25 +12,25 @@ $row=$resultado->fetch_assoc();
 	$passok=$row["password"];
 
 if($loginNombre!="" && $loginPassword!=""){
-	echo $userok;
 	if($loginNombre==$userok && $loginPassword==$passok){
-
-	session_start();
 	$_SESSION["logueado"]=TRUE;
-
-	header("location: cliente.php");
+	header("location:cliente.php");
 	exit();
 	}
 }
 }
 ?>
-
+<!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="estilo.css">
+<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	
 </head>
 <body>
-<form method="POST" action="Login.php">
+<form method="POST" action="index.php">
 <h1 align="center">SISTEME PARA RESTARUANT</h1>
 <div align="center">
 <table width="300" border="8">
@@ -37,7 +38,7 @@ if($loginNombre!="" && $loginPassword!=""){
 <td>
 	<img src="img/contr.png">
 </td>
-<td align="center" bordercolor="#aa55ff" background="img.jpg">
+<td align="center" bordercolor="#aa55ff">
 <blockquote><br>
 <h4>Usuario:</h4>
 <form action="index.php" method="POST">
